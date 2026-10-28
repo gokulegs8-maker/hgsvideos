@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080a10">
+<title>HGS VIDEOS</title>
+<style>
+:root{--bg:#080a10;--panel:#111521;--panel2:#171d2b;--line:#2a3244;--text:#f5f7fc;--muted:#aab4c8;--blue:#8ab4ff;--gold:#e9c77b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#1c2b48 0,transparent 48%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer}.hidden{display:none!important}
+.topbar{max-width:1200px;margin:auto;padding:24px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}.logo{font-size:1.05rem;font-weight:900;letter-spacing:.17em}.logo span{color:var(--blue)}.nav-btn{background:transparent;border:0;color:var(--muted);padding:8px 0}.nav-btn:hover{color:white}
+.page{min-height:calc(100vh - 85px)}.landing{min-height:calc(100vh - 85px);display:grid;place-items:center;padding:34px 22px 80px}.hero{width:min(100%,1000px);text-align:center;padding:clamp(35px,8vw,90px) 22px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(34,52,85,.78),rgba(10,13,21,.88)),radial-gradient(circle at 80% 10%,#2c3f61,transparent 35%);box-shadow:0 30px 100px #0005}.eyebrow{text-transform:uppercase;letter-spacing:.25em;font-size:.75rem;color:var(--blue);font-weight:800}.hero h1{font-size:clamp(3rem,10vw,7rem);letter-spacing:-.07em;line-height:.98;margin:18px 0}.hero .tagline{font-size:clamp(1.05rem,2.5vw,1.35rem);color:#d4dced;margin:0 auto 18px;max-width:700px}.about{max-width:670px;color:var(--muted);margin:0 auto 30px}.primary{background:var(--blue);color:#09101d;border:0;border-radius:999px;padding:14px 24px;font-weight:850;box-shadow:0 8px 30px #8ab4ff20}.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}.secondary{background:#171d2b;color:var(--text);border:1px solid var(--line);border-radius:999px;padding:12px 20px;font-weight:700}.button-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.wrap{max-width:1160px;margin:auto;padding:24px 24px 70px}.page-title{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:-.05em;margin:8px 0}.sub{color:var(--muted);margin:0 0 28px}.season-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.season-card{position:relative;text-align:left;min-height:245px;overflow:hidden;border:1px solid var(--line);border-radius:22px;padding:25px;background:linear-gradient(130deg,#18233a,#10131d 70%);color:var(--text);transition:transform .2s,border-color .2s}.season-card:hover{transform:translateY(-4px);border-color:#6f8fc6}.season-card:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-60px;top:-75px;background:radial-gradient(circle,#8ab4ff35,transparent 68%)}.season-number{color:var(--blue);font-size:.78rem;font-weight:850;letter-spacing:.2em}.season-card h3{position:relative;font-size:2rem;margin:14px 0 6px;letter-spacing:-.04em}.season-card p{position:relative;color:var(--muted);max-width:420px;margin:0 0 24px}.card-link{position:relative;color:#e9eef9;font-weight:750}.detail-panel{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#151d2d,#0e1119)}.detail-banner{padding:clamp(28px,6vw,60px);background:radial-gradient(circle at 85% 10%,#31476b90,transparent 35%),linear-gradient(120deg,#17243a,#111521)}.detail-kicker{color:var(--blue);font-size:.8rem;letter-spacing:.2em;font-weight:850}.detail-banner h2{font-size:clamp(2.4rem,7vw,5rem);line-height:1;margin:12px 0;letter-spacing:-.06em}.detail-banner p{max-width:760px;color:#c4cde0;font-size:1.05rem}.detail-body{padding:clamp(24px,5vw,44px);display:grid;grid-template-columns:1.4fr .8fr;gap:30px}.detail-body h3{margin-top:0}.detail-body p,.detail-body li{color:var(--muted)}.meta-box{background:#0c1019;border:1px solid var(--line);border-radius:16px;padding:20px}.meta-box strong{display:block;margin-bottom:8px}.back{color:var(--muted);border:0;background:transparent;padding:8px 0;margin-bottom:12px}.back:hover{color:white}.footer{text-align:center;color:#7f8ba2;border-top:1px solid var(--line);padding:24px 15px;font-size:.88rem}
+.player-overlay{position:fixed;inset:0;background:#020308f5;z-index:20;display:none;align-items:center;justify-content:center;padding:18px}.player-overlay.open{display:flex}.player-shell{width:min(100%,1200px);background:#0b0e16;border:1px solid #333b4d;border-radius:16px;overflow:hidden;box-shadow:0 20px 90px #0009}.player-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px}.player-controls h3{font-size:.95rem;margin:0}.control-actions{display:flex;gap:8px}.control-btn{background:#202738;color:#f3f6ff;border:1px solid #39445b;border-radius:9px;padding:8px 12px}.video-frame{aspect-ratio:16/9;background:#000}.video-frame iframe{display:block;width:100%;height:100%;border:0}.player-note{font-size:.75rem;color:#8d99af;padding:0 14px 10px}
+@media(max-width:700px){.season-grid{grid-template-columns:1fr}.detail-body{grid-template-columns:1fr}.topbar{padding:18px 16px}.wrap{padding:18px 16px 50px}.hero{border-radius:20px}.player-overlay{padding:0}.player-shell{border-radius:0;width:100%;}.video-frame{aspect-ratio:16/9}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="logo">HGS <span>VIDEOS</span></div>
+  <button class="nav-btn" id="homeNav">HOME</button>
+</header>
+
+<main>
+  <section id="landing" class="page landing">
+    <div class="hero">
+      <div class="eyebrow">The archive of our best days</div>
+      <h1>HGS VIDEOS</h1>
+      <p class="tagline">Four seasons. A thousand memories. One place to relive them.</p>
+      <p class="about">Welcome to HGS Videos — a collection of our funniest moments, unforgettable adventures, inside jokes, and memories with the people who made them special. Pick a season, read its story, and hit play when you're ready to go back.</p>
+      <div class="button-row"><button class="primary" id="experienceBtn">GO &amp; EXPERIENCE ↗</button></div>
+    </div>
+  </section>
+
+  <section id="seasonsPage" class="page hidden">
+    <div class="wrap">
+      <button class="back" id="backHome">← Back to home</button>
+      <div class="eyebrow">Choose your chapter</div>
+      <h2 class="page-title">The Seasons</h2>
+      <p class="sub">Every season has its own story. Pick one to discover what happened.</p>
+      <div class="season-grid" id="seasonGrid"></div>
+    </div>
+  </section>
+
+  <section id="detailPage" class="page hidden">
+    <div class="wrap">
+      <button class="back" id="backSeasons">← All seasons</button>
+      <article class="detail-panel" id="seasonDetail"></article>
+    </div>
+  </section>
+</main>
+<footer class="footer">HGS VIDEOS · Good friends. Crazy times. Forever memories.</footer>
+
+<div class="player-overlay" id="playerOverlay" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="player-shell" id="playerShell">
+    <div class="player-controls">
+      <h3 id="playerTitle">HGS VIDEOS</h3>
+      <div class="control-actions">
+        <button class="control-btn" id="fullscreenBtn">⛶ Full screen</button>
+        <button class="control-btn" id="minimizeBtn">Minimize ✕</button>
+      </div>
+    </div>
+    <div class="video-frame" id="videoFrame"></div>
+    <div class="player-note">Tip: use the video player's full-screen control, or press Esc to exit full screen.</div>
+  </div>
+</div>
+
+<script>
+// EDIT THIS SECTION with your season descriptions and video IDs.
+// YouTube ID example: https://www.youtube.com/watch?v=AbCdEf12345 -> AbCdEf12345
+// Unlisted videos are link-accessible, not truly private.
+const seasons = [
+ {number:1,title:"Season One",subtitle:"Where it all began",description:"The beginning of the HGS story — first memories, random plans, inside jokes, and the moments that started it all.",what:"The origin story: early hangouts, unexpected comedy, and the memories that became part of the group.",mood:"The beginning",videoId:"VIDEO_ID_SEASON_1",playLabel:"Play Season 1"},
+ {number:2,title:"Season Two",subtitle:"The chaos gets bigger",description:"The gang knows each other better, the jokes get louder, and every simple plan somehow turns into a story.",what:"More adventures, bigger laughs, and the kind of chaos only this group understands.",mood:"Peak chaos",videoId:"VIDEO_ID_SEASON_2",playLabel:"Play Season 2"},
+ {number:3,title:"Season Three",subtitle:"Memories on another level",description:"A new chapter full of unexpected moments, unforgettable days, and stories we'll keep bringing up.",what:"The standout moments, the random adventures, and the clips that deserve a rewatch.",mood:"Unforgettable",videoId:"VIDEO_ID_SEASON_3",playLabel:"Play Season 3"},
+ {number:4,title:"Season Four",subtitle:"To be continued…",description:"The latest chapter in the HGS archive — more memories, more madness, and the story still going.",what:"The newest collection. Watch it back, laugh again, and keep making the next season.",mood:"Still writing",videoId:"VIDEO_ID_SEASON_4",playLabel:"Play Season 4"}
+];
+const landing=document.getElementById('landing'), seasonsPage=document.getElementById('seasonsPage'), detailPage=document.getElementById('detailPage');
+const seasonGrid=document.getElementById('seasonGrid'), seasonDetail=document.getElementById('seasonDetail');
+const overlay=document.getElementById('playerOverlay'), playerShell=document.getElementById('playerShell'), videoFrame=document.getElementById('videoFrame');
+let currentSeason=null;
+function showPage(which){
+  landing.classList.toggle('hidden',which!=='landing');
+  seasonsPage.classList.toggle('hidden',which!=='seasons');
+  detailPage.classList.toggle('hidden',which!=='detail');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function renderSeasons(){
+  seasonGrid.innerHTML='';
+  seasons.forEach(s=>{
+    const b=document.createElement('button');b.className='season-card';
+    b.innerHTML=`<div class="season-number">HGS ARCHIVE · SEASON ${String(s.number).padStart(2,'0')}</div><h3>${s.title}</h3><p>${s.subtitle}</p><span class="card-link">Explore this season →</span>`;
+    b.addEventListener('click',()=>openSeason(s.number));seasonGrid.appendChild(b);
+  });
+}
+function openSeason(number){
+  currentSeason=seasons.find(s=>s.number===number);
+  if(!currentSeason)return;
+  seasonDetail.innerHTML=`
+    <div class="detail-banner"><div class="detail-kicker">HGS ARCHIVE · SEASON ${String(currentSeason.number).padStart(2,'0')}</div><h2>${currentSeason.title}</h2><p>${currentSeason.description}</p><div class="button-row" style="justify-content:flex-start"><button class="primary" id="playSeasonBtn">▶ &nbsp; ${currentSeason.playLabel}</button></div></div>
+    <div class="detail-body"><div><h3>About this season</h3><p>${currentSeason.what}</p><h3>What to expect</h3><p>${currentSeason.subtitle}. A collection of real moments, unfiltered laughs, and memories that belong to the HGS gang.</p></div><aside class="meta-box"><strong>Season details</strong><p><b>Season:</b> ${currentSeason.number}</p><p><b>Theme:</b> ${currentSeason.mood}</p><p><b>Collection:</b> HGS Videos</p><p style="font-size:.85rem">When you press play, the season video opens in the player. Use Full screen for immersive viewing or Minimize to return here.</p></aside></div>`;
+  document.getElementById('playSeasonBtn').addEventListener('click',()=>playSeason(currentSeason));
+  showPage('detail');
+}
+function playSeason(s){
+  if(!s.videoId||s.videoId.startsWith('VIDEO_ID_')){
+    alert('This season needs its video ID first. Edit the seasons list in index.html and replace '+s.videoId+' with the real YouTube video ID.');
+    return;
+  }
+  document.getElementById('playerTitle').textContent=s.title+' · HGS VIDEOS';
+  videoFrame.innerHTML=`<iframe id="videoIframe" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(s.videoId)}?autoplay=1&rel=0" title="${s.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  overlay.classList.add('open');
+}
+async function fullscreenPlayer(){
+  try{
+    if(document.fullscreenElement){await document.exitFullscreen();return;}
+    if(playerShell.requestFullscreen){await playerShell.requestFullscreen();}
+    else {const iframe=document.getElementById('videoIframe');if(iframe&&iframe.requestFullscreen)await iframe.requestFullscreen();}
+  }catch(e){alert('Use the YouTube player full-screen icon if your browser blocks website full-screen mode.');}
+}
+function closePlayer(){
+  overlay.classList.remove('open');videoFrame.innerHTML='';
+  if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+}
+document.getElementById('experienceBtn').addEventListener('click',()=>showPage('seasons'));
+document.getElementById('backHome').addEventListener('click',()=>showPage('landing'));
+document.getElementById('backSeasons').addEventListener('click',()=>showPage('seasons'));
+document.getElementById('homeNav').addEventListener('click',()=>{closePlayer();showPage('landing')});
+document.getElementById('minimizeBtn').addEventListener('click',closePlayer);
+document.getElementById('fullscreenBtn').addEventListener('click',fullscreenPlayer);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closePlayer()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open')&&!document.fullscreenElement)closePlayer()});
+renderSeasons();
+</script>
+</body>
+</html>
